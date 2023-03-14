@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box; /*Это правило означает, что все элементы в HTML не будут добавлять внутренние отступы и границы к итоговой ширине.*/
+}
+body {
+    font-family: 'Comfortaa', cursive; /*подключаем шрифт*/
+    font-weight: 400;
+    margin: 0; /*убираем отступ которые есть в браузере по умолчанию*/
+    background-color: #f3f6fd;
+}
+
+.app {
+    display: flex;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.panel {
+    background-color: white;
+    min-height: 100vh; /*минимальная высота панели, 100vh - 100% видимого блока*/
+    padding: 30px; /*Отступы от содержимого*/
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; /*расположение в колонку*/
+    gap: 25px; /*расстояние между элементами внутри блока*/
+    align-items: center; /*выставляем элементы по центру блока*/
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column; /*расположение в колонку*/
+    gap: 25px; /*расстояние между элементами внутри блока*/
+    align-items: center; /*выставляем элементы по центру блока*/
+}
+
+.menu__item {
+    background: #FFFFFF;
+    box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
+    border-radius: 14px;
+    border: none;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.menu__item:hover {
+    background:#6A6AFB;
+}
+
+.menu__item:hover img {
+    filter: brightness(0) invert(1); /*brightness (0) делает картинку черной, затем инвертируем в белую*/
+}
+
+.menu__item__active { /*второй класс применяется поверх первого)*/
+    background: #5051F9;
+}
+
+.menu__item__active img {
+    filter: brightness(0) invert(1);
+}
+
+.menu__add {
+    background: none;
+    border: 1px solid #CAD5FF;
+    border-radius: 14px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__add:hover {
+    background: #dcdcef;
+}
+
+.menu__add:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.content {
+    background-color: #F3F6FD;
+    min-width: 900px;
+    padding: 45px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /*растянуты по углам*/
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 235px;
+}
+
+.progress__text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress__name {
+    font-size: 14px;
+    line-height: 16px;
+    color: #232360;
+}
+
+.progress__percent {
+    font-size: 12px;
+    line-height: 13px;
+    color: #768396;
+}
+
+.progress__bar {
+    width: 100%;
+    height: 5px;
+    background: #E6E9ED;
+    border-radius: 4px;
+    position:relative; /*задаёт родительский блок для абсолютного позиционирования*/
+}
+
+.progress__cover__bar {
+    position: absolute;
+    /*width: 50%;*/
+    transition: all 0.5s; /*задаёт плавность изменений*/
+    height: 5px;
+    background: #5051F9;
+    border-radius: 4px;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.habbit {
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.habbit__day {
+    background: #FBFAFF;
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid #E7EBFB;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 20px 40px;
+    min-width: 150px;
+
+}
+
+.habbit__comment {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 20px 25px;
+}
+
+.habbit__delete {
+    margin-left: auto; /*выделяет все доступное пространство слева в блоке*/
+    margin-right: 10px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.habbit__delete:hover {
+    background: #dcdcef;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #E7EBFB;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-family: 'Comfortaa', cursive;
+    flex:1; /*на всю ширину*/
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+input::placeholder {
+    color: #8899A8;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+.habbit__form {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    padding: 0px 10px 0px 25px;
+    position: relative;
+}
+
+.input__iconca {
+    position:absolute;
+    top: 10px;
+    left: 45px;
+}
+
+.input__icon {
+    padding-left: 45px;
+}
+
+.button {
+    font-family: 'Comfortaa', cursive;
+    background: #EDECFE;
+    border-radius: 9px;
+    border: none;
+    font-size: 13px;
+    line-height: 14px;
+    color: #5051F9;
+    padding: 14px 30px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #c6c3fb;
+}
+
+.cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover__hidden {
+    display: none;
+}
+
+.popup {
+    background: #FFFFFF;
+    box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px; /*отступ слева и справа от всех внутренних элементов*/
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.icon-label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #768396;
+    margin-bottom: 10px;
+}
+
+.icon-select {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    border: 1px solid #5051F9;
+    border-radius: 14px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.icon-active {
+    background: #5051F9;
+}
+
+.icon-active img {
+    filter: brightness(0) invert(1);
+}
+
+.icon:hover {
+    background: #6A6AFB;
+}
+
+.icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.popup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup-form input{
+    width: 100%;
+}
